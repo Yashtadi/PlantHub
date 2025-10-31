@@ -1,2 +1,2 @@
 # PlantHub
-Website to buy plants for every place , your home , office , for gifting ,etc....
+A place to buy plants and trees online.
