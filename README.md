@@ -67,3 +67,7 @@ These routes are again used in another folder called "server.js" , we will under
 So now when a user clicks on a plant and wants to see its information, it is a GET request which comes to the server , the server uses routes imported from the routes folder to handle these request , performs operations/interacts with the datbase using controllers inside that particular route and then the route gives a response.
 We will see more about this later.
 
+# Server.js
+Now I wrote the server.js , the most important part of the backend
+Here we will use the routes and controllers we set up earlier, and after coding this file , we can start our backend server
+
