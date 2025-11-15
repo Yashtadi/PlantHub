@@ -52,3 +52,28 @@ Backend Environment setup:
     -Order
 
 11. Added a few more files but i am yet to understand them , will add info about them here once i do understand them 
+
+12. now i am adding backend controllers
+
+# What are controllers?
+Okay so controllers are basically functions or blocks of codes which are imported in the routes folder and used there to write code for routes.
+
+# Now what are routes?
+Routes are basically a code block which deals with a client server interaction, so in the routes folder there will be different routes which will use controllers , whose codes will be in the controller folder. Read the codes of the Routes and controller folders for better understanding.
+
+# Wait there is more:
+These routes are again used in another folder called "server.js" , we will understand this further. But server.js is the folder where we setup our backend server, how it starts , what response it gives to which request. So there are something called API's and the most famous one is the RESTFUL API which uses the HTTP methods(GET , POST , PUT , DELETE). 
+
+So now when a user clicks on a plant and wants to see its information, it is a GET request which comes to the server , the server uses routes imported from the routes folder to handle these request , performs operations/interacts with the datbase using controllers inside that particular route and then the route gives a response.
+We will see more about this later.
+
+# Server.js
+Now I wrote the server.js , the most important part of the backend
+Here we will use the routes and controllers we set up earlier, and after coding this file , we can start our backend server
+
+I have completed setting up some of the initial routes/apis and setting up the overall backend and now i can start working on the backend.
+
+NOTE:
+I just have to understand the code of utils and middlewate folder mainly
+As for the routes and controllers folder , i have a basic idea of what it does but i still need to take a look of how the syntax is actually working.
+
