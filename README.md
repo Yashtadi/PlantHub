@@ -1,14 +1,18 @@
 Backend Environment setup:
 1. "mkdir backend" -> "cd backend" -> "npm init -y"
+
 2. Install dependancies:
    "npm install express mongoose dotenv bcryptjs jsonwebtoken cors morgan express-validator nodemailer multer"
+
 3. "npm install --save-dev nodemon"
+
 4. update the package.json
     -change main to server.js;
     -add line; "type":"module"
     -add following in scripts:
         "start": "node server.js",
         "dev": "nodemon server.js"
+
 5. create a .env file in the backend folder and paste the boiler plate code(later you can change the connection string)
     Boiler plate code:
     PORT=5000
@@ -19,10 +23,11 @@ Backend Environment setup:
     EMAIL_PASS=your_app_password
     NODE_ENV=development
 
-6. Now we will write the code to make the MongoDB connection which will be written in: backend/config/db.js
+6. Now we will write the code to make the MongoDB connection which will be written in: 
+   backend/config/db.js
 
 7. Now we will create some models for our website. The first one is User 
-NOTE: by convention the files inside the models folder , first letter we keep capital
+   NOTE: by convention the files inside the models folder , first letter we keep capital
 
 8. backend/models/User.js
    Now each model has two parts:
@@ -45,3 +50,5 @@ NOTE: by convention the files inside the models folder , first letter we keep ca
 10. Similarly I have created the following models:
     -Plant
     -Order
+
+11. Added a few more files but i am yet to understand them , will add info about them here once i do understand them 
