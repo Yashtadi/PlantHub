@@ -71,3 +71,9 @@ We will see more about this later.
 Now I wrote the server.js , the most important part of the backend
 Here we will use the routes and controllers we set up earlier, and after coding this file , we can start our backend server
 
+I have completed setting up some of the initial routes/apis and setting up the overall backend and now i can start working on the backend.
+
+NOTE:
+I just have to understand the code of utils and middlewate folder mainly
+As for the routes and controllers folder , i have a basic idea of what it does but i still need to take a look of how the syntax is actually working.
+
