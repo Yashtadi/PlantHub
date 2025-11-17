@@ -22,6 +22,9 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # Protected Route component (frontend/src/components/ProtectedRoute.jsx)
 {explain}
 
+# Navbar component (frontend/src/components/Navbar.jsx)
+
+
 
 
 
