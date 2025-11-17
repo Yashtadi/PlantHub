@@ -19,7 +19,8 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # Context Providers (frontend/src/context/AuthContext.jsx) (frontend/src/context/CartContext.jsx)
 {explain}
 
-
+# Protected Route component (frontend/src/components/ProtectedRoute.jsx)
+{explain}
 
 
 
