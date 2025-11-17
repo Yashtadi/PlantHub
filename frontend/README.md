@@ -16,6 +16,11 @@ We are using a api called axios and hence we write the code to import that and i
 Axios is a promise-based HTTP client used in full-stack websites to facilitate communication between the client-side (frontend) and the server-side (backend).
 Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 
+# Context Providers (frontend/src/context/AuthContext.jsx) (frontend/src/context/CartContext.jsx)
+{explain}
+
+
+
 
 
 
