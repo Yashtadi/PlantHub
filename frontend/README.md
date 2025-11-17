@@ -28,6 +28,8 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # Authentication pages (frontend/src/pages/Login.jsx) (frontend/src/pages/Signup.jsx) (frontend/src/pages/ForgotPassword.jsx) (frontend/src/pages/ResetPassword.jsx)
 {explain}
 
+# Home page
+{explain}
 
 
 
