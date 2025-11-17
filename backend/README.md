@@ -77,3 +77,6 @@ NOTE:
 I just have to understand the code of utils and middlewate folder mainly
 As for the routes and controllers folder , i have a basic idea of what it does but i still need to take a look of how the syntax is actually working.
 
+At this juncture you can cd into the backend folder and run the backend using "npm run dev" and you will be connected to MongoDB
+
+Now further on you can read the README in the frontend folder and i will document the next steps there
