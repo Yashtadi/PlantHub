@@ -39,6 +39,10 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 2. Plants page file (frontend/src/pages/Plants.jsx)
     {explain}
 
+# Plant Details page (PlantDetails.jsx)
+{explain}
+
+
 
 
 
