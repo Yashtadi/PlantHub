@@ -23,6 +23,11 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 {explain}
 
 # Navbar component (frontend/src/components/Navbar.jsx)
+{explain}
+
+# Authentication pages (frontend/src/pages/Login.jsx) (frontend/src/pages/Signup.jsx) (frontend/src/pages/ForgotPassword.jsx) (frontend/src/pages/ResetPassword.jsx)
+{explain}
+
 
 
 
