@@ -31,6 +31,13 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # Home page
 {explain}
 
+# Plant listing page with filters
+
+1. Plant card compoent (frontend/src/components/PlantCard.jsx)
+    {explain}
+
+2. Plants page file (frontend/src/pages/Plants.jsx)
+    {explain}
 
 
 
