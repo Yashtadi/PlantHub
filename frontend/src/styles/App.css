@@ -635,6 +635,7 @@ body {
   padding: 0.5rem;
   border: 2px solid var(--border);
   border-radius: 6px;
+  min-width: 0;
 }
 
 .plants-main {
