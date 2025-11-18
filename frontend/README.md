@@ -51,6 +51,9 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # Order confirmation page (frontend/src/pages/OrderConfirmation.jsx)
 {explain}
 
+# Your Orders Page (frontend/src/pages/YourOrders.jsx)
+{explain}
+
 
 
 
