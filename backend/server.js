@@ -44,6 +44,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
 app.use('/api/auth', authRoutes);
+
 app.use('/api/plants', plantRoutes);
 app.use('/api/orders', orderRoutes);
 
@@ -60,3 +61,14 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
+app.post("/api/auth/login" , (req,res) => {
+
+})
+app.post("/api/auth/signup" , (req,res) => {
+  
+})
+app.post("/api/auth/forgotpassword" , (req,res) => {
+  
+})
