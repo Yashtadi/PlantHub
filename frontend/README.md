@@ -48,7 +48,8 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # Checkout Page (frontend/src/pages/Checkout.jsx)
 {explain}
 
-
+# Order confirmation page (frontend/src/pages/OrderConfirmation.jsx)
+{explain}
 
 
 
