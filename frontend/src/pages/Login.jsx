@@ -34,51 +34,62 @@ const Login = () => {
 
   return (
     <div className="auth-container">
-      <div className="auth-card">
-        <div className="auth-header">
-          <h1>🌿 Welcome Back</h1>
-          <p>Login to continue shopping for plants</p>
+      <div className="auth-wrapper">
+        <div className="auth-brand">
+          <span className="brand-logo">🌿</span>
+          <div className="brand-text">
+            <h1>Welcome to PlantHub</h1>
+            <p>Join our community of plant lovers</p>
+          </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="auth-form">
-          {error && <div className="error-message">{error}</div>}
-
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              placeholder="Enter your email"
-            />
+        <div className="auth-card">
+          <div className="auth-header">
+            <h1>Login into your account</h1>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-              placeholder="Enter your password"
-            />
+          <form onSubmit={handleSubmit} className="auth-form">
+            {error && <div className="error-message">{error}</div>}
+
+            <div className="form-group">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="Enter your email"
+                className="light-input"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                placeholder="Enter your password"
+                className="light-input"
+              />
+            </div>
+
+            <button type="submit" className="btn-primary" disabled={loading}>
+              {loading ? 'Logging in...' : 'Login'}
+            </button>
+          </form>
+
+          <div className="auth-footer">
+            <Link to="/forgot-password" className="link">Forgot Password?</Link>
+            <p>
+              Don't have an account? <Link to="/signup" className="link">Sign Up</Link>
+            </p>
           </div>
-
-          <button type="submit" className="btn-primary" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
-          </button>
-        </form>
-
-        <div className="auth-footer">
-          <Link to="/forgot-password" className="link">Forgot Password?</Link>
-          <p>
-            Don't have an account? <Link to="/signup" className="link">Sign Up</Link>
-          </p>
         </div>
       </div>
     </div>
