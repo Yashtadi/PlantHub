@@ -57,4 +57,9 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # PLant Tips page (frontend/src/pages/PlantTips.jsx)
 {explain}
 
+# App.css
+{explain}
+
+# Main App setup and routing (App.jsx, main.jsx , index.css)
+{explain}
 
