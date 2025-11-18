@@ -105,21 +105,21 @@ const PlantTips = () => {
       id: 1,
       title: 'Beginner\'s Guide to Indoor Plants',
       excerpt: 'Starting your indoor plant journey? Here are the easiest plants for beginners and how to care for them.',
-      date: 'November 10, 2024',
+      date: 'November 18, 2025',
       image: '🌱'
     },
     {
       id: 2,
       title: '10 Low Maintenance Plants for Busy People',
       excerpt: 'Don\'t have much time? These resilient plants can thrive with minimal care and attention.',
-      date: 'November 5, 2024',
+      date: 'November 18, 2025',
       image: '🪴'
     },
     {
       id: 3,
       title: 'Creating Your Indoor Garden Paradise',
       excerpt: 'Transform your living space into a green oasis with these design tips and plant combinations.',
-      date: 'October 28, 2024',
+      date: 'November 18, 2025',
       image: '🏡'
     }
   ];

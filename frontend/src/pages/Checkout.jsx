@@ -107,6 +107,17 @@ const Checkout = () => {
   const deliveryCharge = subtotal >= 500 ? 0 : 50;
   const total = subtotal + deliveryCharge;
 
+  // --- FIX: Explicit Styles for Light Theme Inputs ---
+  const inputStyle = {
+    backgroundColor: '#ffffff',
+    color: '#1f2937', // Dark gray text
+    border: '1px solid #d1d5db', // Light gray border
+    padding: '10px',
+    borderRadius: '6px',
+    width: '100%',
+    boxSizing: 'border-box' // Ensures padding doesn't break width
+  };
+
   return (
     <>
       <Navbar />
@@ -128,6 +139,8 @@ const Checkout = () => {
                     value={deliveryAddress.fullName}
                     onChange={handleChange}
                     className={errors.fullName ? 'error' : ''}
+                    // Merge base style with potential error border
+                    style={{...inputStyle, borderColor: errors.fullName ? 'red' : '#d1d5db'}}
                   />
                   {errors.fullName && <span className="error-text">{errors.fullName}</span>}
                 </div>
@@ -142,6 +155,7 @@ const Checkout = () => {
                     onChange={handleChange}
                     maxLength="10"
                     className={errors.phone ? 'error' : ''}
+                    style={{...inputStyle, borderColor: errors.phone ? 'red' : '#d1d5db'}}
                   />
                   {errors.phone && <span className="error-text">{errors.phone}</span>}
                 </div>
@@ -157,6 +171,7 @@ const Checkout = () => {
                   onChange={handleChange}
                   placeholder="House No., Street Name"
                   className={errors.addressLine1 ? 'error' : ''}
+                  style={{...inputStyle, borderColor: errors.addressLine1 ? 'red' : '#d1d5db'}}
                 />
                 {errors.addressLine1 && <span className="error-text">{errors.addressLine1}</span>}
               </div>
@@ -170,6 +185,7 @@ const Checkout = () => {
                   value={deliveryAddress.addressLine2}
                   onChange={handleChange}
                   placeholder="Landmark, Area"
+                  style={inputStyle}
                 />
               </div>
 
@@ -183,6 +199,7 @@ const Checkout = () => {
                     value={deliveryAddress.city}
                     onChange={handleChange}
                     className={errors.city ? 'error' : ''}
+                    style={{...inputStyle, borderColor: errors.city ? 'red' : '#d1d5db'}}
                   />
                   {errors.city && <span className="error-text">{errors.city}</span>}
                 </div>
@@ -196,6 +213,7 @@ const Checkout = () => {
                     value={deliveryAddress.state}
                     onChange={handleChange}
                     className={errors.state ? 'error' : ''}
+                    style={{...inputStyle, borderColor: errors.state ? 'red' : '#d1d5db'}}
                   />
                   {errors.state && <span className="error-text">{errors.state}</span>}
                 </div>
@@ -210,6 +228,7 @@ const Checkout = () => {
                     onChange={handleChange}
                     maxLength="6"
                     className={errors.pincode ? 'error' : ''}
+                    style={{...inputStyle, borderColor: errors.pincode ? 'red' : '#d1d5db'}}
                   />
                   {errors.pincode && <span className="error-text">{errors.pincode}</span>}
                 </div>
@@ -217,9 +236,9 @@ const Checkout = () => {
 
               <div className="payment-method">
                 <h3>Payment Method</h3>
-                <div className="payment-option">
+                <div className="payment-option" style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
                   <input type="radio" id="cod" name="payment" checked readOnly />
-                  <label htmlFor="cod">💵 Cash on Delivery</label>
+                  <label htmlFor="cod" style={{color: '#1f2937', fontWeight: '500'}}>💵 Cash on Delivery</label>
                 </div>
               </div>
 
@@ -236,7 +255,11 @@ const Checkout = () => {
             <div className="order-items">
               {cart.map((item) => (
                 <div key={item._id} className="order-item">
-                  <img src={`http://localhost:5000${item.image}`} alt={item.title} />
+                  <img 
+                    src={`http://localhost:5000${item.image}`} 
+                    alt={item.title} 
+                    onError={(e) => {e.target.src = "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1000&auto=format&fit=crop"}}
+                  />
                   <div className="order-item-info">
                     <p className="order-item-title">{item.title}</p>
                     <p className="order-item-qty">Qty: {item.quantity}</p>

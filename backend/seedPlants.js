@@ -14,7 +14,7 @@ const plants = [
     image: '/uploads/plants/monstera.jpg',
     availability: true,
     stock: 25,
-    featured: true
+    featured: false
   },
   {
     title: 'Snake Plant',
@@ -24,7 +24,7 @@ const plants = [
     image: '/uploads/plants/snake-plant.jpg',
     availability: true,
     stock: 50,
-    featured: true
+    featured: false
   },
   {
     title: 'Peace Lily',
@@ -74,7 +74,7 @@ const plants = [
     image: '/uploads/plants/money-plant.jpg',
     availability: true,
     stock: 60,
-    featured: true
+    featured: false
   },
   {
     title: 'Rose Plant',
@@ -84,7 +84,7 @@ const plants = [
     image: '/uploads/plants/rose.jpg',
     availability: true,
     stock: 15,
-    featured: false
+    featured: true
   },
   {
     title: 'Tulsi (Holy Basil)',
@@ -94,17 +94,17 @@ const plants = [
     image: '/uploads/plants/tulsi.jpg',
     availability: true,
     stock: 45,
-    featured: false
+    featured: true
   },
   {
     title: 'Bamboo Plant',
     description: 'Lucky bamboo brings good fortune and positive energy. Grows in water and requires minimal care.',
     price: 279,
-    category: 'Indoor',
+    category: 'Outdoor',
     image: '/uploads/plants/bamboo.jpg',
     availability: true,
     stock: 30,
-    featured: true
+    featured: false
   },
   {
     title: 'Cactus Mix',
@@ -145,6 +145,36 @@ const plants = [
     availability: true,
     stock: 22,
     featured: false
+  },
+  {
+    title: 'Ferns',
+    description: 'Ferns are vascular plants that reproduce via spores instead of seeds or flowers. They have complex leaves.',
+    price: 549,
+    category: 'Outdoor',
+    image: '/uploads/plants/ferns.jpg',
+    availability: true,
+    stock: 22,
+    featured: true
+  },
+  {
+    title: 'Areca',
+    description: 'Areca plants are known for their graceful, feathery fronds, resembling bamboo stalks. Good for air purifying and ambiance',
+    price: 549,
+    category: 'Outdoor',
+    image: '/uploads/plants/areca.jpg',
+    availability: true,
+    stock: 22,
+    featured: false
+  },
+  {
+    title: 'Krishnakamal (Passion Flower)',
+    description: 'The Krishna Kamal, or passion flower (Passiflora), is known for its strikingly intricate and colorful blooms. It holds deep symbolism in Indian culture',
+    price: 329,
+    category: 'Flowering',
+    image: '/uploads/plants/krishnakamal.jpg',
+    availability: true,
+    stock: 22,
+    featured: true
   },
   {
     title: 'Lavender',

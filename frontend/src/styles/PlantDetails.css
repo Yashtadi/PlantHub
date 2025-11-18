@@ -1,0 +1,201 @@
+/* Container for the whole page */
+.plant-details-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #4b5563;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.btn-back:hover {
+  text-decoration: underline;
+  color: #166534;
+}
+
+.plant-details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+  .plant-details-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plant-details-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* --- HEADER --- */
+.plant-details-header h1 {
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  font-family: serif;
+}
+
+.plant-category-badge {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* --- PRICE --- */
+.plant-price-section {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.plant-price-large {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #166534;
+}
+
+.stock-status.in-stock {
+  background: #f0fdf4;
+  color: #15803d;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border: 1px solid #bbf7d0;
+}
+
+.stock-status.out-of-stock {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border: 1px solid #fecaca;
+}
+
+/* --- QUANTITY FIX --- */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.qty-label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.qty-group {
+  display: flex;
+  align-items: center;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.qty-btn {
+  width: 40px;             /* Fixed Width */
+  height: 40px;            /* Fixed Height */
+  display: flex;           /* Flexbox */
+  align-items: center;     /* Vertical Center */
+  justify-content: center; /* Horizontal Center */
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1.5rem;       /* Larger symbol */
+  line-height: 1;
+  cursor: pointer;
+  color: #166534;
+  transition: all 0.2s;
+  padding-bottom: 4px;     /* Slight adjustment for visual center */
+}
+
+.qty-btn:hover {
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+.qty-display {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+/* --- ACTION BUTTONS --- */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-add-to-cart-large, .btn-buy-now {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-add-to-cart-large {
+  background-color: #166534;
+  color: white;
+}
+
+.btn-add-to-cart-large:hover {
+  background-color: #14532d;
+}
+
+.btn-buy-now {
+  background-color: #fbbf24;
+  color: #1f2937;
+}
+
+.btn-buy-now:hover {
+  background-color: #f59e0b;
+}
+
+.delivery-info p {
+  margin: 0.5rem 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.plant-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plant-features li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}

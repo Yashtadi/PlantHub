@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 import Navbar from '../components/Navbar';
 import { CartContext } from '../context/CartContext';
+import '../styles/PlantDetails.css'; // <--- IMPORT THE NEW CSS
 
 const PlantDetails = () => {
   const [plant, setPlant] = useState(null);
@@ -22,8 +23,8 @@ const PlantDetails = () => {
       setPlant(data);
     } catch (error) {
       console.error('Error fetching plant:', error);
-      alert('Plant not found');
-      navigate('/plants');
+      // alert('Plant not found'); // Commented out to prevent annoyance during dev
+      // navigate('/plants');
     }
     setLoading(false);
   };
@@ -42,7 +43,7 @@ const PlantDetails = () => {
     return (
       <>
         <Navbar />
-        <div className="loading-screen">Loading...</div>
+        <div className="loading-screen" style={{padding: '2rem', textAlign:'center'}}>Loading...</div>
       </>
     );
   }
@@ -51,7 +52,7 @@ const PlantDetails = () => {
     return (
       <>
         <Navbar />
-        <div className="error-screen">Plant not found</div>
+        <div className="error-screen" style={{padding: '2rem', textAlign:'center'}}>Plant not found</div>
       </>
     );
   }
@@ -65,13 +66,16 @@ const PlantDetails = () => {
         </button>
 
         <div className="plant-details-container">
+          {/* Left Column: Image */}
           <div className="plant-details-image">
             <img
               src={`http://localhost:5000${plant.image}`}
               alt={plant.title}
+              onError={(e) => {e.target.src = "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1000&auto=format&fit=crop"}}
             />
           </div>
 
+          {/* Right Column: Info */}
           <div className="plant-details-info">
             <div className="plant-details-header">
               <h1>{plant.title}</h1>
@@ -88,44 +92,44 @@ const PlantDetails = () => {
             </div>
 
             <div className="plant-description">
-              <h3>Description</h3>
-              <p>{plant.description}</p>
+              <h3 style={{fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem'}}>Description</h3>
+              <p style={{lineHeight: '1.6', color: '#4b5563'}}>{plant.description}</p>
             </div>
 
-            <div className="plant-features">
-              <h3>Features</h3>
+            <div className="plant-features" style={{marginTop: '1.5rem'}}>
+              <h3 style={{fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem'}}>Features</h3>
               <ul>
                 <li>🌱 Easy to maintain</li>
                 <li>💧 Regular watering required</li>
-                <li>☀️ Suitable for {plant.category.toLowerCase()} areas</li>
+                <li>☀️ Suitable for {Array.isArray(plant.category) ? plant.category[0] : plant.category} areas</li>
                 <li>📦 Comes with care instructions</li>
               </ul>
             </div>
 
             {plant.availability && (
               <div className="plant-actions">
+                
+                {/* --- UPDATED QUANTITY SELECTOR --- */}
                 <div className="quantity-selector">
-                  <label>Quantity:</label>
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="qty-btn"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    value={quantity}
-                    onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                    className="qty-input"
-                    min="1"
-                  />
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="qty-btn"
-                  >
-                    +
-                  </button>
+                  <span className="qty-label">Quantity:</span>
+                  <div className="qty-group">
+                    <button
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="qty-btn"
+                    >
+                      -
+                    </button>
+                    {/* We use a span instead of input for cleaner alignment */}
+                    <span className="qty-display">{quantity}</span>
+                    <button
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="qty-btn"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
+                {/* --------------------------------- */}
 
                 <div className="action-buttons">
                   <button onClick={handleAddToCart} className="btn-add-to-cart-large">
