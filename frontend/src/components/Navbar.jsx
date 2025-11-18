@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          🌿 PlantShop
+          🌿 PlantHub
         </Link>
 
         <ul className="nav-menu">

@@ -37,7 +37,7 @@ const Home = () => {
         {/* Hero Section */}
         <section className="hero">
           <div className="hero-content">
-            <h1 className="hero-title">Welcome to PlantShop 🌿</h1>
+            <h1 className="hero-title">Welcome to PlantHub 🌿</h1>
             <p className="hero-subtitle">
               Discover the perfect plants for your home and garden
             </p>
