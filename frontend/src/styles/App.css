@@ -252,7 +252,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: rgb(209, 233, 209);
+  background: var(--bg-light);
 }
 
 .auth-wrapper {
@@ -549,6 +549,8 @@ body {
   border: 2px solid var(--border);
   border-radius: 8px;
   font-size: 1rem;
+  background-color: #f5f5f5; /* <-- Added this */
+  color: var(--text-dark);
 }
 
 .search-input:focus {
@@ -618,16 +620,23 @@ body {
 
 .filter-select {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem;          /* <-- Increased to match Auth */
   border: 2px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;        /* <-- Increased to match Auth */
   font-size: 0.95rem;
+  background-color: #f5f5f5; /* <-- Added this */
+  color: var(--text-dark);
+  cursor: pointer;
 }
 
-.price-inputs {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.price-input {
+  flex: 1;
+  padding: 0.75rem;          /* <-- Increased to match Auth */
+  border: 2px solid var(--border);
+  border-radius: 8px;        /* <-- Increased to match Auth */
+  min-width: 0;
+  background-color: #f5f5f5; /* <-- Added this */
+  color: var(--text-dark);
 }
 
 .price-input {
