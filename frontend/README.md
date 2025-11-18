@@ -54,6 +54,7 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # Your Orders Page (frontend/src/pages/YourOrders.jsx)
 {explain}
 
-
+# PLant Tips page (frontend/src/pages/PlantTips.jsx)
+{explain}
 
 
