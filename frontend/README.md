@@ -42,9 +42,11 @@ Since it is promise-based , it makes handling asynchronous HTTP requests easily.
 # Plant Details page (PlantDetails.jsx)
 {explain}
 
-# Cart Page (CartItem.jsx)
+# Cart Page (Cart.jsx) (CartItem.jsx)
 {explain}
 
+# Checkout Page (frontend/src/pages/Checkout.jsx)
+{explain}
 
 
 
