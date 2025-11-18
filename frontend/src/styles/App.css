@@ -338,6 +338,7 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s;
+  color: var(--text-dark);
 }
 
 .form-group input.light-input {
