@@ -252,30 +252,67 @@ body {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-light) 100%);
+  background: rgb(209, 233, 209);
+}
+
+.auth-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+.auth-brand {
+  display:inline;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.brand-logo {
+  font-size: 3rem;
+}
+
+.brand-text {
+  text-align: center;
+}
+
+.brand-text h1 {
+  font-size: 2.25rem;
+  color: var(--text-dark);
+  font-weight: bold;
+  margin: 0;
+}
+
+.brand-text p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin: 0.5rem 0 0 0;
 }
 
 .auth-card {
   background: var(--white);
   border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   padding: 3rem;
-  max-width: 500px;
   width: 100%;
 }
 
 .auth-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 2rem;
 }
 
 .auth-header h1 {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.auth-header p {
-  color: var(--text-light);
+  color: var(--text-dark);
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .auth-form {
@@ -303,9 +340,14 @@ body {
   transition: border-color 0.3s;
 }
 
+.form-group input.light-input {
+  background-color: #f5f5f5;
+}
+
 .form-group input:focus {
   outline: none;
   border-color: var(--primary-color);
+  background-color: var(--white);
 }
 
 .form-group input.error {
@@ -346,6 +388,21 @@ body {
 
 .link:hover {
   text-decoration: underline;
+}
+
+/* Responsive adjustments for auth pages */
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .brand-text h1 {
+    font-size: 1.75rem;
+  }
+
+  .brand-logo {
+    font-size: 2.5rem;
+  }
 }
 
 /* ==================== HOME PAGE ==================== */
@@ -1759,7 +1816,7 @@ body {
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
-/* ==================== RESPONSIVE DESIGN ==================== */
+
 @media (max-width: 1024px) {
   .nav-container {
     padding: 1rem;
