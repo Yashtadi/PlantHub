@@ -63,12 +63,3 @@ app.listen(PORT, () => {
 });
 
 
-app.post("/api/auth/login" , (req,res) => {
-
-})
-app.post("/api/auth/signup" , (req,res) => {
-  
-})
-app.post("/api/auth/forgotpassword" , (req,res) => {
-  
-})
