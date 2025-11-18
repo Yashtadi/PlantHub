@@ -80,3 +80,6 @@ As for the routes and controllers folder , i have a basic idea of what it does b
 At this juncture you can cd into the backend folder and run the backend using "npm run dev" and you will be connected to MongoDB
 
 Now further on you can read the README in the frontend folder and i will document the next steps there
+
+After you are done with frontend we need to do two more things , add plant data and images , so we will create a file seedPlants.js to seed plant data.
+Also we will create a uploads folder where we will add images of the plants later
