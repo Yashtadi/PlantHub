@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 const sendEmail = async (options) => {
   try {
-    // Create transporter with Gmail
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -11,7 +11,7 @@ const sendEmail = async (options) => {
       }
     });
 
-    // Email options
+
     const mailOptions = {
       from: `PlantHub <${process.env.EMAIL_USER}>`,
       to: options.email,
@@ -19,7 +19,7 @@ const sendEmail = async (options) => {
       html: options.html
     };
 
-    // Send email
+
     await transporter.sendMail(mailOptions);
     console.log('Password reset email sent to:', options.email);
   } catch (error) {

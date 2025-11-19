@@ -58,7 +58,7 @@ body {
   flex-direction: column;
 }
 
-/* ==================== NAVBAR ==================== */
+
 /* ==================== NAVBAR ==================== */
 .navbar {
   background-color: var(--white);
@@ -391,7 +391,7 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive adjustments for auth pages */
+
 @media (max-width: 768px) {
   .auth-card {
     padding: 2rem 1.5rem;
@@ -549,7 +549,7 @@ body {
   border: 2px solid var(--border);
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #f5f5f5; /* <-- Added this */
+  background-color: #f5f5f5; 
   color: var(--text-dark);
 }
 

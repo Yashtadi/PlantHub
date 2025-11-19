@@ -41,7 +41,7 @@ const plantSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Index for search functionality
+
 plantSchema.index({ title: 'text', description: 'text' });
 
 export default mongoose.model('Plant', plantSchema);

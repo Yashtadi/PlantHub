@@ -44,17 +44,16 @@ const userSchema = new mongoose.Schema(
 }
 );
 
-// MAKE SURE TO READ THE README FILE BELOW TO UNDERSTAND THE LOGIC OF THE BELOW CODE 
-// Hash password before saving
+
 userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) {
     next();
   }
-  const salt = await bcrypt.genSalt(10);                        //genertes a random string
-  this.password = await bcrypt.hash(this.password, salt);       //hashes the random string(salt) with the password
+  const salt = await bcrypt.genSalt(10);                     
+  this.password = await bcrypt.hash(this.password, salt);    
 });
 
-// Compare password method
+
 userSchema.methods.matchPassword = async function(enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };

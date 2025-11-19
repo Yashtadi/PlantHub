@@ -17,7 +17,7 @@ const ResetPassword = () => {
     setError('');
     setMessage('');
 
-    // Validation
+    
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -34,7 +34,7 @@ const ResetPassword = () => {
       const { data } = await API.put(`/auth/reset-password/${resetToken}`, { password });
       setMessage(data.message);
       
-      // Redirect to login after 2 seconds
+  
       setTimeout(() => {
         navigate('/login');
       }, 2000);

@@ -3,26 +3,25 @@ import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import sendEmail from '../utils/emailService.js';
 
-// Generate JWT
+
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE
   });
 };
 
-// @desc    Register user
-// @route   POST /api/auth/register
+
 export const register = async (req, res) => {
   try {
     const { name, email, password, phone } = req.body;
 
-    // Check if user exists
+
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    // Create user
+
     const user = await User.create({
       name,
       email,
@@ -44,13 +43,12 @@ export const register = async (req, res) => {
   }
 };
 
-// @desc    Login user
-// @route   POST /api/auth/login
+
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Check for user
+
     const user = await User.findOne({ email }).select('+password');
 
     if (user && (await user.matchPassword(password))) {
@@ -69,8 +67,7 @@ export const login = async (req, res) => {
   }
 };
 
-// @desc    Get current user
-// @route   GET /api/auth/me
+
 export const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
@@ -80,37 +77,36 @@ export const getMe = async (req, res) => {
   }
 };
 
-// @desc    Forgot password - Send reset email
-// @route   POST /api/auth/forgot-password
+
 export const forgotPassword = async (req, res) => {
   try {
     const { email } = req.body;
 
-    // Find user by email
+
     const user = await User.findOne({ email });
 
     if (!user) {
       return res.status(404).json({ message: 'No account found with this email' });
     }
 
-    // Generate reset token (random string)
+
     const resetToken = crypto.randomBytes(32).toString('hex');
 
-    // Hash the token and save to database
+
     user.resetPasswordToken = crypto
       .createHash('sha256')
       .update(resetToken)
       .digest('hex');
 
-    // Set token expiry (10 minutes from now)
+
     user.resetPasswordExpire = Date.now() + 10 * 60 * 1000;
 
     await user.save();
 
-    // Create reset URL with the original (unhashed) token
+
     const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
 
-    // Email HTML template
+
     const message = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <h2 style="color: #2d6a4f; text-align: center;">🌿 PlantHub Password Reset</h2>
@@ -143,7 +139,7 @@ export const forgotPassword = async (req, res) => {
     `;
 
     try {
-      // Send email
+
       await sendEmail({
         email: user.email,
         subject: 'PlantHub - Reset Your Password',
@@ -154,7 +150,7 @@ export const forgotPassword = async (req, res) => {
         message: 'Password reset email sent! Please check your inbox.' 
       });
     } catch (error) {
-      // If email fails, clear the reset token
+
       user.resetPasswordToken = undefined;
       user.resetPasswordExpire = undefined;
       await user.save();
@@ -170,8 +166,7 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
-// @desc    Reset password - Update password in database
-// @route   PUT /api/auth/reset-password/:resetToken
+
 export const resetPassword = async (req, res) => {
   try {
     const { password } = req.body;
@@ -182,13 +177,13 @@ export const resetPassword = async (req, res) => {
       });
     }
 
-    // Hash the token from URL to match database
+ 
     const resetPasswordToken = crypto
       .createHash('sha256')
       .update(req.params.resetToken)
       .digest('hex');
 
-    // Find user with valid token and not expired
+
     const user = await User.findOne({
       resetPasswordToken,
       resetPasswordExpire: { $gt: Date.now() }
@@ -200,7 +195,7 @@ export const resetPassword = async (req, res) => {
       });
     }
 
-    // Update password in database (will be hashed by pre-save hook)
+
     user.password = password;
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
@@ -215,8 +210,7 @@ export const resetPassword = async (req, res) => {
   }
 };
 
-// @desc    Update user addresses
-// @route   PUT /api/auth/addresses
+
 export const updateAddresses = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);

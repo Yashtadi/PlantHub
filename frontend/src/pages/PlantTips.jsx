@@ -107,7 +107,7 @@ const PlantTips = () => {
       excerpt: 'Starting your indoor plant journey? Here are the easiest plants for beginners and how to care for them.',
       date: 'November 19, 2025',
       image: '🌱',
-      // ADDED URL PROPERTY HERE
+      
       url: 'https://www.pickuplimes.com/article/houseplant-care-tips-for-beginners-99'
     },
     {
@@ -116,7 +116,7 @@ const PlantTips = () => {
       excerpt: 'Don\'t have much time? These resilient plants can thrive with minimal care and attention.',
       date: 'November 19, 2025',
       image: '🪴',
-      // ADDED URL PROPERTY HERE
+      
       url: 'https://www.idyl.co.in/blogs/blog/10-easy-care-plants-for-busy-people'
     },
     {
@@ -125,7 +125,7 @@ const PlantTips = () => {
       excerpt: 'Intergalactic Plants produce oxygen?',
       date: 'November 19, 2025',
       image: '👽',
-      // ADDED URL PROPERTY HERE
+      
       url: 'https://www.reddit.com/r/marvelstudios/comments/9xr69t/does_groot_breath_co2_or_oxygen/'
     }
   ];
@@ -139,7 +139,7 @@ const PlantTips = () => {
           <p>Everything you need to know to keep your plants healthy and thriving</p>
         </div>
 
-        {/* Quick Tips Section */}
+        
         <section className="tips-section">
           <h2>Essential Plant Care Tips</h2>
           <div className="tips-grid">
@@ -158,7 +158,7 @@ const PlantTips = () => {
           </div>
         </section>
 
-        {/* Blog Section */}
+       
         <section className="blog-section">
           <h2>Latest Blog Posts</h2>
           <div className="blog-grid">
@@ -169,12 +169,12 @@ const PlantTips = () => {
                   <h3>{blog.title}</h3>
                   <p className="blog-date">{blog.date}</p>
                   <p className="blog-excerpt">{blog.excerpt}</p>
-                  {/* MODIFIED THIS LINE: Replaced <button> with <a> */}
+                  
                   <a
-                    href={blog.url}                      // 1. Use the new 'url' property
-                    target="_blank"                     // 2. Opens link in a new tab
-                    rel="noopener noreferrer"           // 3. Security best practice
-                    className="btn-read-more"           // 4. Keeps the existing styling
+                    href={blog.url}                     
+                    target="_blank"                     
+                    rel="noopener noreferrer"         
+                    className="btn-read-more"           
                   >
                     Read More →
                   </a>
@@ -184,7 +184,7 @@ const PlantTips = () => {
           </div>
         </section>
 
-        {/* Common Problems Section */}
+        
         <section className="problems-section">
           <h2>Common Plant Problems & Solutions</h2>
           <div className="problems-list">

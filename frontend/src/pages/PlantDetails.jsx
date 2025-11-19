@@ -3,8 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 import Navbar from '../components/Navbar';
 import { CartContext } from '../context/CartContext';
-import '../styles/PlantDetails.css'; // <--- IMPORT THE NEW CSS
-
+import '../styles/PlantDetails.css'; 
 const PlantDetails = () => {
   const [plant, setPlant] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -23,8 +22,6 @@ const PlantDetails = () => {
       setPlant(data);
     } catch (error) {
       console.error('Error fetching plant:', error);
-      // alert('Plant not found'); // Commented out to prevent annoyance during dev
-      // navigate('/plants');
     }
     setLoading(false);
   };

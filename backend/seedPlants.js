@@ -192,11 +192,10 @@ const seedPlants = async () => {
   try {
     await connectDB();
 
-    // Clear existing plants
+
     await Plant.deleteMany({});
     console.log('Existing plants deleted');
 
-    // Insert new plants
     await Plant.insertMany(plants);
     console.log('Sample plants added successfully!');
 

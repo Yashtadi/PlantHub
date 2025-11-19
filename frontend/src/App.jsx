@@ -3,7 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
-// Import pages
+
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
@@ -17,7 +17,7 @@ import OrderConfirmation from './pages/OrderConfirmation';
 import YourOrders from './pages/YourOrders';
 import PlantTips from './pages/PlantTips';
 
-// Import styles
+
 import './styles/App.css';
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:resetToken" element={<ResetPassword />} />
 
-            {/* Protected routes (require login) */}
+            {/* Protected routes */}
             <Route
               path="/"
               element={
@@ -98,7 +98,7 @@ function App() {
               }
             />
 
-            {/* Catch all - redirect to home */}
+            {/* redirect to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </CartProvider>
