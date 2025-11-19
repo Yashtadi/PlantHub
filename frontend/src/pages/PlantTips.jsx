@@ -105,22 +105,28 @@ const PlantTips = () => {
       id: 1,
       title: 'Beginner\'s Guide to Indoor Plants',
       excerpt: 'Starting your indoor plant journey? Here are the easiest plants for beginners and how to care for them.',
-      date: 'November 18, 2025',
-      image: '🌱'
+      date: 'November 19, 2025',
+      image: '🌱',
+      // ADDED URL PROPERTY HERE
+      url: 'https://www.pickuplimes.com/article/houseplant-care-tips-for-beginners-99'
     },
     {
       id: 2,
       title: '10 Low Maintenance Plants for Busy People',
       excerpt: 'Don\'t have much time? These resilient plants can thrive with minimal care and attention.',
-      date: 'November 18, 2025',
-      image: '🪴'
+      date: 'November 19, 2025',
+      image: '🪴',
+      // ADDED URL PROPERTY HERE
+      url: 'https://www.idyl.co.in/blogs/blog/10-easy-care-plants-for-busy-people'
     },
     {
       id: 3,
-      title: 'Creating Your Indoor Garden Paradise',
-      excerpt: 'Transform your living space into a green oasis with these design tips and plant combinations.',
-      date: 'November 18, 2025',
-      image: '🏡'
+      title: 'I am Groot?',
+      excerpt: 'Intergalactic Plants produce oxygen?',
+      date: 'November 19, 2025',
+      image: '👽',
+      // ADDED URL PROPERTY HERE
+      url: 'https://www.reddit.com/r/marvelstudios/comments/9xr69t/does_groot_breath_co2_or_oxygen/'
     }
   ];
 
@@ -163,7 +169,15 @@ const PlantTips = () => {
                   <h3>{blog.title}</h3>
                   <p className="blog-date">{blog.date}</p>
                   <p className="blog-excerpt">{blog.excerpt}</p>
-                  <button className="btn-read-more">Read More →</button>
+                  {/* MODIFIED THIS LINE: Replaced <button> with <a> */}
+                  <a
+                    href={blog.url}                      // 1. Use the new 'url' property
+                    target="_blank"                     // 2. Opens link in a new tab
+                    rel="noopener noreferrer"           // 3. Security best practice
+                    className="btn-read-more"           // 4. Keeps the existing styling
+                  >
+                    Read More →
+                  </a>
                 </div>
               </div>
             ))}

@@ -1,8 +1,8 @@
 import Order from '../models/Order.js';
 import Plant from '../models/Plant.js';
 
-// @desc    Create new order
-// @route   POST /api/orders
+
+
 export const createOrder = async (req, res) => {
   try {
     const { items, deliveryAddress, totalAmount } = req.body;
@@ -11,7 +11,7 @@ export const createOrder = async (req, res) => {
       return res.status(400).json({ message: 'No order items' });
     }
 
-    // Verify all plants exist and are available
+    
     for (let item of items) {
       const plant = await Plant.findById(item.plant);
       if (!plant || !plant.availability) {
@@ -33,8 +33,8 @@ export const createOrder = async (req, res) => {
   }
 };
 
-// @desc    Get user orders
-// @route   GET /api/orders/my-orders
+
+
 export const getMyOrders = async (req, res) => {
   try {
     const orders = await Order.find({ user: req.user._id })
@@ -47,8 +47,8 @@ export const getMyOrders = async (req, res) => {
   }
 };
 
-// @desc    Get order by ID
-// @route   GET /api/orders/:id
+
+
 export const getOrderById = async (req, res) => {
   try {
     const order = await Order.findById(req.params.id)
@@ -59,7 +59,7 @@ export const getOrderById = async (req, res) => {
       return res.status(404).json({ message: 'Order not found' });
     }
 
-    // Make sure order belongs to logged in user
+    
     if (order.user._id.toString() !== req.user._id.toString()) {
       return res.status(401).json({ message: 'Not authorized' });
     }
