@@ -115,20 +115,20 @@
 }
 
 .qty-btn {
-  width: 40px;             /* Fixed Width */
-  height: 40px;            /* Fixed Height */
-  display: flex;           /* Flexbox */
-  align-items: center;     /* Vertical Center */
-  justify-content: center; /* Horizontal Center */
+  width: 40px;           
+  height: 40px;           
+  display: flex;           
+  align-items: center;     
+  justify-content: center; 
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
-  font-size: 1.5rem;       /* Larger symbol */
+  font-size: 1.5rem;       
   line-height: 1;
   cursor: pointer;
   color: #166534;
   transition: all 0.2s;
-  padding-bottom: 4px;     /* Slight adjustment for visual center */
+  padding-bottom: 4px;    
 }
 
 .qty-btn:hover {

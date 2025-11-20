@@ -57,7 +57,7 @@ const Plants = () => {
     const newFilters = { ...filters, [key]: value };
     setFilters(newFilters);
 
-    // Update URL params
+  
     const newParams = {};
     Object.keys(newFilters).forEach((k) => {
       if (newFilters[k] && newFilters[k] !== 'All') {

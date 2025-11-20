@@ -28,7 +28,7 @@ const Checkout = () => {
       ...deliveryAddress,
       [e.target.name]: e.target.value
     });
-    // Clear error for this field
+    
     if (errors[e.target.name]) {
       setErrors({ ...errors, [e.target.name]: '' });
     }
@@ -107,15 +107,15 @@ const Checkout = () => {
   const deliveryCharge = subtotal >= 500 ? 0 : 50;
   const total = subtotal + deliveryCharge;
 
-  // --- FIX: Explicit Styles for Light Theme Inputs ---
+  
   const inputStyle = {
     backgroundColor: '#ffffff',
-    color: '#1f2937', // Dark gray text
-    border: '1px solid #d1d5db', // Light gray border
+    color: '#1f2937', 
+    border: '1px solid #d1d5db', 
     padding: '10px',
     borderRadius: '6px',
     width: '100%',
-    boxSizing: 'border-box' // Ensures padding doesn't break width
+    boxSizing: 'border-box' 
   };
 
   return (
@@ -139,7 +139,7 @@ const Checkout = () => {
                     value={deliveryAddress.fullName}
                     onChange={handleChange}
                     className={errors.fullName ? 'error' : ''}
-                    // Merge base style with potential error border
+                    
                     style={{...inputStyle, borderColor: errors.fullName ? 'red' : '#d1d5db'}}
                   />
                   {errors.fullName && <span className="error-text">{errors.fullName}</span>}
